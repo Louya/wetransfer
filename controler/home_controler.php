@@ -159,6 +159,11 @@ function listFile($idFile){
 
 
     global $bdd, $twig, $idFile;
+
+    $number = explode(".", trim($idFile, '.'));
+
+    // require_once 'model/login_model.php';
+    // getInfoDownload($number[0]);
     
     echo $twig->render('download.twig', ["idFile"=>$idFile]);
 }
