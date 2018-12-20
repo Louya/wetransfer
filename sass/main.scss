@@ -13,7 +13,8 @@
 @import "../node_modules/bootstrap/scss/code";
 @import "../node_modules/bootstrap/scss/grid";
 @import "../node_modules/bootstrap/scss/utilities";
-
+@import "../node_modules/bootstrap/scss/forms";
+@import "../node_modules/bootstrap/scss/custom-forms";
 
 //variables globales
 $mainGreen : #009688;
@@ -89,6 +90,7 @@ body{
         }
         @import 'download';
         @import 'info';
+        @import 'home';
 
     }
     
@@ -148,3 +150,28 @@ body{
 }
 
 
+.bluetext {
+    color: #009688;
+    
+}
+
+
+
+.editform {
+    border: none;
+    background-color: #E0E0E0;
+}
+
+.editdownloadbutton {
+    border: none;
+    color: azure;
+    background-color: #009688;
+
+}
+
+.edit_pic {
+
+    height: 30px;
+    width: 30px;
+
+}
