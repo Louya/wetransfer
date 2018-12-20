@@ -14,8 +14,6 @@ $controler = (count($request) === 1)? 'home': $request[1];
 $action = (count($request) < 3)? '': $request[2];
 $idFile = (count($request) < 4)? '': $request[3];
 
-var_dump($controler);
-
 //Routeur pour acces aux contrôleurs
 switch ($controler) {
     case 'home':

@@ -50,6 +50,7 @@ switch ($action) {
     $auth_info = logTest();
     $authentification = $auth_info[0];
     $user = $auth_info[1];
+    echo $authentification.', '.$user;
     displayDashboard($authentification, $user);
  }
 
@@ -67,6 +68,7 @@ switch ($action) {
     require_once 'model/login_model.php';
     //getConnexionLogs($identifiant);
     $logs = getConnexionLogs($identifiant);
+    var_dump($logs);
 
     if(isset($logs[0])){
         if($password === $logs[0]['password']){
@@ -91,7 +93,7 @@ function displayDashboard($authentification, $user){
 
         $error = 'Identifiant ou mot de passe incorrect';
         session_destroy();
-        header("Location: http://localhost:8080/dashboard/login/false");
+        header("Location: https://fabienc.promo-23.codeur.online/wetransfer/dashboard/login/false");
     }
 
 }
@@ -99,7 +101,7 @@ function displayDashboard($authentification, $user){
 function logout(){
     $error = '';
     session_destroy();
-    header("Location: http://localhost:8080/dashboard/login");
+    header("Location: https://fabienc.promo-23.codeur.online/wetransfer/dashboard/login");
 }
 
  
