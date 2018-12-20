@@ -170,7 +170,7 @@ function listFile($idFile){
 
 function downloadFile($idFile) {
 
-    $file = $_SERVER["DOCUMENT_ROOT"]."/fichier/$idFile";
+    $file = $_SERVER["DOCUMENT_ROOT"]."eztransfer/fichier/$idFile";
     $error = false;
 
     if (file_exists($file)) {
