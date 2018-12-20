@@ -23,10 +23,6 @@ switch ($controler) {
     case 'dashboard':
        require_once 'controler/dashboard_controler.php';
     break;
-
-    case 'download':
-       require_once 'controler/home_controler.php';
-    break;
  
     default: //Affichage de la page 404
       echo $twig->render('404.twig', array());
