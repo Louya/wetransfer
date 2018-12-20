@@ -17,6 +17,10 @@ switch ($action) {
         login($idFile);
     break;
 
+    case 'logout':
+        logout();
+    break;
+
     default: //Affichage de la page 404
         echo $twig->render('404.twig', array());
     break;
@@ -90,6 +94,12 @@ function displayDashboard($authentification, $user){
         header("Location: http://localhost:8080/dashboard/login/false");
     }
 
+}
+
+function logout(){
+    $error = '';
+    session_destroy();
+    header("Location: http://localhost:8080/dashboard/login");
 }
 
  

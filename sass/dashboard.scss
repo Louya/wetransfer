@@ -25,13 +25,57 @@ body{
         color: white;
         text-transform: uppercase;
         height: 10vh;
-        font-size: 2rem;        
+        font-size: 2rem;      
     }
     main{
         .left-bar{
             height: 90vh;
             background-color: $deepGrey;
             color: $lightGrey;
+            a{
+                text-decoration: none;
+                color: $lightGrey !important;
+            }
+            a:hover{
+                transition : 0.3s;
+            }  
+        }
+        .diagrams{
+            .left-diagram{
+                width : 65%;
+                height: 100%;
+                .up-chart{
+                    height: 50%;
+                    width: 100%;
+
+                    .info{
+                        width: 30%;
+                        height: 100%;
+    
+                    }
+                    .chart{
+                        position : relative;
+                        width: 70%;
+                        height: 100%;
+    
+                    }
+                }
+                .down-chart{
+                    position : relative;
+                    width : 70%;
+                    height: 50%;
+                }
+            }
+            .right-diagram{
+                width: 35%;
+                height: 100%;
+                .chart{
+                    position : relative;
+                    height: 100%;
+                    width: 100%;
+
+                }
+            }
         }
     }
 }

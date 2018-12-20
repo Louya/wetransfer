@@ -17,16 +17,60 @@
         <h1 class="flex-grow-1 text-center">dashboard</h1>
     </header>
     <main class="row">
-        <div class="left-bar col-2 d-flex flex-column align-items-center py-5">
-            <p><img src="media/user_picture.svg" alt="photo utilisateur" width="100px" height="100px"></p>
-            <p>{{user}}</p>
-            <a href="dashboard/login"><img src="media/logout.svg" alt="logout logo">logout</a>
+        <div class="left-bar col-1 d-flex flex-column align-items-center justify-content-between py-5">
+            <div class="d-flex flex-column align-items-center">
+                <p><img src="media/user_picture.svg" alt="photo utilisateur" width="100px" height="100px"></p>
+                <p>{{user}}</p>
+            </div>
+            <a class="p-2" href="dashboard/logout"><img src="media/logout.svg" alt="logout logo">logout</a>
         </div>
-        <div class="col-10 d-flex justify-content-center align-items-center">
-            <p>Diagrammes à compléter</p>
+        <div class="diagrams col-11 d-flex justify-content-center align-items-center m-0 p-0">
+            <div class="left-diagram d-flex flex-column justify-content-center align-items-center">
+                <div class="up-chart d-flex justify-content-center align-items-center ">
+                    <div class="info d-flex pt-4 flex-column align-items-center">
+                        <h3>Filtres</h3>
+                        <label for="year">Année</label>
+                        <select name="year">
+                                <option value="2017">2017</option>
+                                <option value="2018">2018</option>
+                                <option value="2019">2019</option>
+                        </select>
+                        <label for="week">Semaine</label>
+                        <select name="week">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="2">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                        </select>
+                    </div>
+                    <div class="chart">
+                        <canvas id="chart1">
+
+                        </canvas>
+                    </div>
+                </div>
+                <div class="down-chart d-flex justify-content-center align-items-center">
+                    <canvas id="chart2">
+
+                    </canvas>
+                </div>
+            </div>
+            <div class="right-diagram d-flex flex-column justify-content-center align-items-center">
+                <div class="chart">
+                    <canvas id="chart3">
+
+                    </canvas>
+                </div>
+            </div>
         </div>
     </main>
-    <script src="js/dash.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="js/dashboard.js"></script>
 </body>
 
 </html>

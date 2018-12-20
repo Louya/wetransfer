@@ -62,7 +62,7 @@ function upload(){
     envoiMail($info, $number, $mailExpe, $mailDesti, $message, $size, $name);    //Envoie du mail
 
     //affichage de la page d'information
-    echo $twig->render('info.twig', array('titre'=>$titre, 'info'=>$info, 'nom_fichier'=>$name, "poids"=>$size, 'expediteur'=>$expediteur, 'message'=>$message, 'erreur'=>$erreur));
+    echo $twig->render('info.twig', array('titre'=>$titre, 'info'=>$info, 'nom_fichier'=>$name, "poids"=>$size, 'expediteur'=>$expediteur, 'destinataire'=>$mailDesti, 'message'=>$message, 'erreur'=>$erreur));
 
   
 }
@@ -96,10 +96,10 @@ function uploadFile($name, $type, $size, $tmp_name, $error, $maxsize){
 
     $nom = "fichier/".$id.".".$extension_upload;
     $number = $id.".".$extension_upload;
-    $resultat = move_uploaded_file($_FILES['icone']['tmp_name'],$nom);
     
     //Message de réussite
-    if ($resultat){
+    if ($erreur === ""){
+        $resultat = move_uploaded_file($_FILES['icone']['tmp_name'],$nom);
         $info = "Vos fichiers ont bien été envoyés !";
         $titre = "C'est tout bon";
     } else {
