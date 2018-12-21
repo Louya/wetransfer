@@ -35,6 +35,12 @@ textarea {
     .custom-file-input {
         height: 120px;
     }
+    .custom-file-input:hover{
+        height: 118px;
+        cursor: pointer;
+        border: solid 1px $mainGreen;
+    }
+    }
     .custom-file-label {
         background: rgba(0, 150, 135, 0.1);
         color: #607D8B;
@@ -48,6 +54,9 @@ textarea {
                 font-size: 0.9em;
             }
         }
+        span:hover{
+            cursor: pointer;
+        }
         .circle {
             width: 50px;
             height: 50px;
@@ -58,6 +67,9 @@ textarea {
                 width: 35px;
                 height: 35px;
             }
+        }
+        .circle:hover{
+            cursor: pointer;
         }
         .fa-cloud-upload-alt {
             color: #FFFFFF;
@@ -71,5 +83,10 @@ textarea {
                 font-size: 17px;
             }
         }
+        .fa-cloud-upload-alt:hover{
+            cursor: pointer;
+        }
     }
-}
+    .custom-file-label:hover{
+        cursor: pointer;
+    }

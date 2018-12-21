@@ -53,7 +53,7 @@ $titre = $upvars[5];
 updateDb($name, $extension_upload, $message, $id, $size,  $date_up, $mailExpe, $expediteur, $mailDesti);     //Mise à jour de la base de données
 envoiMail($info, $number, $mailExpe, $mailDesti, $message, $size, $name);    //Envoie du mail
 // //affichage de la page d'information
-echo $twig->render('info.twig', array('titre'=>$titre, 'info'=>$info, 'nom_fichier'=>$name, "poids"=>$size, 'expediteur'=>$expediteur, 'message'=>$message, 'erreur'=>$erreur));
+echo $twig->render('info.twig', array('titre'=>$titre, 'info'=>$info, 'nom_fichier'=>$name, "poids"=>$size, 'expediteur'=>$expediteur, 'mailExped'=>$mailExpe, 'destinataire'=>$mailDesti, 'message'=>$message, 'erreur'=>$erreur));
 
 }
 
