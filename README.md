@@ -6,7 +6,7 @@ Projet pédagogique AccessCodeSchool - Site de transfert de fichier sur le modè
 
 Ces instructions vont vous permettre de copier, d'installer et de faire fonctionner le projet sur votre machine à but de développement. Pour installer le projet sur un server veuillez vous reporter à la section déploiement. 
 
-### Prereqquis
+### Prerequis
 
 modules à installer
 Composer install
