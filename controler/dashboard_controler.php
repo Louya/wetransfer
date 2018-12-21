@@ -41,48 +41,47 @@ switch ($action) {
  }
  
  function display(){
-    
     global $twig;
     global $bdd;
     
     $error = "";
 
     $auth_info = logTest();
-    $authentification = $auth_info[0];
-    $user = $auth_info[1];
-    displayDashboard($authentification, $user);
+    $session = $auth_info['session'];
+    $user = $auth_info['id'];
+  
+    displayDashboard($session, $user);
  }
 
  function logTest(){
-
     global $twig;
     global $bdd;
-    $authentification = false;
+    $_SESSION['authentification'] = false;
 
     //Récupération des informations saisies
-    $identifiant = $_POST['identifiant'];
-    $password = $_POST['password'];
+    $id = $_POST['id'];
+    $pass = $_POST['pass'];
 
     //Récupération des infos de la bdd
     require_once 'model/login_model.php';
     //getConnexionLogs($identifiant);
-    $logs = getConnexionLogs($identifiant);
+    $logs = getConnexionLogs($id);
 
     if(isset($logs[0])){
-        if($password === $logs[0]['password']){
+        if($pass === $logs[0]['password']){
             session_start();
             $_SESSION['authentification'] = true;
         } 
     } 
-    $auth_info = [$authentification, $identifiant];
+    $auth_info = ['id'=>$id, 'session'=>$_SESSION['authentification']];
     return $auth_info;
 }
 
-function displayDashboard($authentification, $user){
+function displayDashboard($session, $user){
 
     global $twig;
 
-    if($_SESSION['authentification'] === true){
+    if($session === true){
 
         require_once 'model/dashboard_model.php';
         echo $twig->render('dashboard.twig', array('user'=>$user));
@@ -91,7 +90,8 @@ function displayDashboard($authentification, $user){
 
         $error = 'Identifiant ou mot de passe incorrect';
         session_destroy();
-        header("Location: http://localhost:8080/dashboard/login/false");
+        echo $error;
+        header("Location: https://fabienc.promo-23.codeur.online/eztransfer/dashboard/login/false");
     }
 
 }
@@ -99,7 +99,7 @@ function displayDashboard($authentification, $user){
 function logout(){
     $error = '';
     session_destroy();
-    header("Location: http://localhost:8080/dashboard/login");
+    header("Location: https://fabienc.promo-23.codeur.online/eztransfer/dashboard/login");
 }
 
  

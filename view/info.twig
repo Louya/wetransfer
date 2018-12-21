@@ -1,8 +1,10 @@
 {# indique la dépendance au template #}
+{# indique la dépendance au template #}
 {% extends "template_front.twig" %}
 
 {# block info sur la section upload #}
 {% block info %}
+
     <h2>Bienvenue sur</h2>
     <p><img class="logo" src="media/ez_transfer.svg" alt="logo complet du site EZ transfer"></p>
     <hr>
@@ -11,10 +13,12 @@
         <br>
         Profitez d'un service  rapide et sécurisé.
     </p>
+
 {% endblock %}
 
 {# affichage du formulaire et de l'upload #}
 {% block formulaire %}
+
 <div class="d-flex justify-content-between">
     <p class="bg-logo"><img src="media/cloud_dl.svg" alt="logo transfert ok" height="50px" width="50px"></p>
     <h2>{{titre}}</h2>
@@ -31,7 +35,5 @@
     <p>message : {{message}}</p>
     <p>{{erreur}}</p>
 </div>
- 
- 
  
 {% endblock %}
