@@ -14,7 +14,7 @@ switch ($action) {
     break;
 
     case 'login':
-        login($idFile);
+        login($id);
     break;
 
     case 'logout':
@@ -26,11 +26,11 @@ switch ($action) {
     break;
  }
 
- function login($idFile){
+ function login($id){
 
     global $twig;
 
-    if($idFile != ""){
+    if($id != ""){
         $error = 'Identifiant ou mot de passe incorrect';
     } else{
         $error = '';
