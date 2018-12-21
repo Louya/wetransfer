@@ -91,7 +91,7 @@ function displayDashboard($session, $user){
         $error = 'Identifiant ou mot de passe incorrect';
         session_destroy();
         echo $error;
-        header("Location: https://fabienc.promo-23.codeur.online/eztransfer/dashboard/login/false");
+        header("Location: http://localhost:8080/dashboard/login/false");
     }
 
 }
@@ -99,7 +99,7 @@ function displayDashboard($session, $user){
 function logout(){
     $error = '';
     session_destroy();
-    header("Location: https://fabienc.promo-23.codeur.online/eztransfer/dashboard/login");
+    header("Location: http://localhost:8080/dashboard/login");
 }
 
  
