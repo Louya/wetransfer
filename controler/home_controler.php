@@ -12,10 +12,10 @@ case 'upload':
     upload();
 break;
 case 'listfile':
-    listFile($idFile);
+    listFile($id);
 break;
 case 'downloadfile':
-    downloadFile($idFile);
+    downloadFile($id);
 break;
 default: //Affichage de la page 404
     echo $twig->render('home.twig', array());
@@ -135,16 +135,16 @@ if ($info = "Transfert réussi !") {
 }
 }
 
-function listFile($idFile){
-global $bdd, $twig, $idFile;
-$number = explode(".", trim($idFile, '.'));
+function listFile($id){
+global $bdd, $twig, $id;
+$number = explode(".", trim($id, '.'));
 require_once 'model/download_model.php';
 $resultat = getInfoDownload($number[0]);
-echo $twig->render('download.twig', ["idFile"=>$idFile, 'resultat'=>$resultat]);
+echo $twig->render('download.twig', ["id"=>$id, 'resultat'=>$resultat]);
 }
 
-function downloadFile($idFile) {
-$file = $_SERVER["DOCUMENT_ROOT"]."/fichier/$idFile";
+function downloadFile($id) {
+$file = $_SERVER["DOCUMENT_ROOT"]."/fichier/$id";
 $error = false;
 if (file_exists($file)) {
     header('Content-Description: File Transfer');

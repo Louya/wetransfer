@@ -1,9 +1,9 @@
 <?php 
 //Infos de connexion à la base de données
 
-    $username = 'fabienc';
-    $password = 'nlDv8Ot72yfivQ==';
-    $database ='fabienc_eztransfer';
+    $username = 'root';
+    $password = 'online@2017';
+    $database ='eztransfer';
     $host = 'localhost';
 // Chargement de l'environnement PDO
 
