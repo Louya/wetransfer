@@ -3,10 +3,10 @@
 
 {# block info sur la section upload #}
 {% block info %}
-    <h2>Bienvenue sur</h2>
-    <p><img class="logo" src="media/ez_transfer.svg" alt="logo complet du site EZ transfer"></p>
-    <hr>
-    <p>Récupérez facilement les fichiers que l'on vous a envoyé.</p>
+<h2>Bienvenue sur</h2>
+<p><img class="logo" src="media/ez_transfer.svg" alt="logo complet du site EZ transfer"></p>
+<hr>
+<p>Récupérez facilement les fichiers que l'on vous a envoyé.</p>
 
 {% endblock %}
 
@@ -28,11 +28,7 @@
     <p>message : {{file.message}}</p>
     {% endfor %}
 </div>
- 
 
-    
-
-
-    <a href="home/downloadfile/{{idFile}}" class="editdownloadbutton" type="submit" name="submit" id="btnSubmit">Télécharger</a>
+<a href="home/downloadfile/{{idFile}}" class="editdownloadbutton" type="submit" name="submit" id="btnSubmit">Télécharger</a>
 
 {% endblock %}

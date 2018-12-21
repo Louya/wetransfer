@@ -12,7 +12,7 @@ $request = explode("/", trim($url, '/'));
 //Test et récupération du contrôleur et de l'action
 $controler = (count($request) === 1)? 'home': $request[1];
 $action = (count($request) < 3)? '': $request[2];
-$idFile = (count($request) < 4)? '': $request[3];
+$id = (count($request) < 4)? '': $request[3];
 
 //Routeur pour acces aux contrôleurs
 switch ($controler) {
